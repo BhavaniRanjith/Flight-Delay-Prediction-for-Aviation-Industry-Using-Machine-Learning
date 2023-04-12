@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<style>
+.image h1{
+color:white;
+text-align:center;
+padding:10px;
+}
+.form {
+color:white;
+padding:10px;
+}
+
+label
+{
+font-weight:bold;
+}
+
+.form input
+{
+width : 150px;
+}
+
+.form select
+{
+width : 150px;
+}
+
+.output
+{
+color:white;
+font-weight:bold;
+font-size:20px;
+}
+
+.btn
+{
+background-color:#FADA5E;
+font-style:bold;
+}
+
+</style>
+</head>
+
+<body style="background-image:url('/static/Flight 1.jpeg'); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; min-height: 100vh;">
+
+<div class="image">
+<h1>Prediction of Flight Delay</h1>
+    <div class="form">
+    <form method="POST" action="/prediction">
+        <label>Enter the Flight Number :</label>
+        <input type="text" name="name"/>
+        <br><br>
+        <label>Month : </label>
+        <input type="text" id="month" name="month" value="">
+        <br><br>
+        <label>Day of Month :</label>
+        <input type="text" name="dayofmonth" value="">
+        <br><br>
+        <label>Day of Week : </label>
+        <input type="week" name="dayofweek" value="">
+        <br><br>
+        <label>Orgin : </label>
+        <!-- <input type="text" name="origin"> -->
+        <select name="origin" id="orgin">
+            <option value="0">MSP</option>
+            <option value="1">DTW</option>
+            <option value="2">JFK</option>
+            <option value="3">SEA</option>
+            <option value="4">ALT</option>
+        </select>
+        <br><br>
+        <label>Destination : 	</label>
+        <!-- <input type="text" name="destination"> -->
+        <select name="destination" id="destination">
+            <option value="0">MSP</option>
+            <option value="1">DTW</option>
+            <option value="2">JFK</option>
+            <option value="3">SEA</option>
+            <option value="4">ALT</option>
+        </select>
+        <br><br>
+        <label>Scheduled Departure Time : </label>
+        <input type="text" name="dept">
+        <br><br>
+        <label>Scheduled Arrival Time : </label>
+        <input type="text" name="arrtime">
+        <br><br>
+        <label>Actual Departure Time : </label>
+        <input type="text" name="actdept">
+        <br><br>
+        <input class="btn" type="submit" value="SUBMIT">
+    </form>
+        </div>
+    <div class="output">{{showcase}}</div>
+</div>
+</body>
+</html>
